@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Asis's TODO App</title>
+		<link href="./styles.css" rel="stylesheet">
+		<script type="module" src="./app.js"></script>
+	</head>
+	<body>
+		<main>
+			<h1>Asis's todo App</h1>
+			<div class="container">
+				<label class="input glassomorphic">
+					<input id="title-input" type="text" placeholder="Type title here...">
+					<button id="add-new-todo-item-button" class="image-button">
+						<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+							<path d="M0 0h24v24H0z" fill="none"/>
+							<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+						</svg>
+					</button>
+				</label>
+				<ul class="content" id="content">
+					<li id="nothing" class="text-muted glassomorphic">No items added to your list</li>
+				</ul>
+			</div>
+		</main>
+	</body>
+</html>

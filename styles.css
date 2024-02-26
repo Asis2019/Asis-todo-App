@@ -1,0 +1,125 @@
+:root {
+    --accent-color: #D3ABDE;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+
+    font-family: "Inter", -apple-system, "Nunito", BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    color: #000000;
+
+    background: linear-gradient(320deg, var(--accent-color), #DED3AB, #ABDED3);
+}
+
+h1 {
+    padding-top: 2rem;
+    font-size: 6vw;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+}
+
+.image-button {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.checkbox {
+    border: transparent;
+}
+
+.glassomorphic {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.input {
+    margin-inline: auto;
+    width: 30rem;
+    height: 2rem;
+    padding-inline: .5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input > input {
+    background-color: transparent;
+    outline: transparent;
+    width: 90%;
+    height: 100%;
+    border: transparent;
+}
+
+.input > button {
+    transition: background-color ease-in-out 200ms;
+    border-radius: 2.5rem;
+}
+
+.input > button:hover {
+    background-color: #D3ABDE3D;
+    transition: background-color ease-in-out 200ms;
+}
+
+.container {
+    margin-top: 3rem;
+    max-width: 1140px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content {
+    margin-top: 3rem;
+    margin-inline: auto;
+    width: 35rem;
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.todoItem {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    animation: fadein 300ms;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fadeout {
+    transition: opacity 300ms ease-in-out;
+    opacity: 0;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.text-muted {
+    opacity: .5;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
