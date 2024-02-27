@@ -38,7 +38,6 @@ function createTodoItem(title, dontSave = false) {
 function addTodoItemToUI(todoItem) {
     if (nothingElement !== null) {
         nothingElement.remove();
-        nothingElement = null;
     }
 
     const listItem = document.createElement('li');
@@ -70,17 +69,24 @@ function addTodoItemToUI(todoItem) {
     deleteButton.innerHTML = deleteIcon;
     deleteButton.classList.add('image-button');
     deleteButton.addEventListener('click', () => {
-        listItem.classList.add('fadeout');
-        setTimeout(_ => {
-            listItem.remove()
-        }, 300);
-        deleteTodoItem(todoItem.id);
+        deleteTodoItemEvent(listItem, todoItem);
     });
     div.appendChild(deleteButton);
 
     listItem.appendChild(div);
 
     content.appendChild(listItem);
+}
+
+function deleteTodoItemEvent(listItem, todoItem) {
+    listItem.classList.add('fadeout');
+    setTimeout(_ => {
+        listItem.remove();
+        if (content.children.length <= 0) {
+            content.appendChild(nothingElement);
+        }
+    }, 300);
+    deleteTodoItem(todoItem.id);
 }
 
 document.getElementById('add-new-todo-item-button').addEventListener('click', () => {
