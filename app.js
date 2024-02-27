@@ -49,17 +49,20 @@ function addTodoItemToUI(todoItem) {
     div.classList.add('button-container');
 
     const label = document.createElement('label');
-    label.classList.add('checkbox');
+    label.classList.add('glass-checkbox-label', 'glassomorphic');
+    label.setAttribute("for", `checkbox-${todoItem.id}`);
 
     const checkBox = document.createElement('input');
     checkBox.type = 'checkbox';
     checkBox.checked = todoItem.completed;
+    checkBox.id = `checkbox-${todoItem.id}`;
+    checkBox.classList.add('glass-checkbox')
     checkBox.addEventListener('change', event => {
         todoItem.completed = event.target.checked;
         updateTodoItem(todoItem);
     });
 
-    label.appendChild(checkBox)
+    div.appendChild(checkBox);
     div.appendChild(label);
 
 

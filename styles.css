@@ -36,8 +36,45 @@ h1 {
     cursor: pointer;
 }
 
-.checkbox {
-    border: transparent;
+.glass-checkbox-label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    width: 48px;
+    height: 24px;
+
+    transition: background-color 300ms;
+}
+
+.glass-checkbox-label::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 22px;
+    height: 22px;
+    top: 50%;
+    transform: translate(1px, -50%);
+    transition: transform 300ms;
+
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+.glass-checkbox {
+    display: none;
+}
+
+.glass-checkbox:checked + .glass-checkbox-label {
+    background: var(--accent-color);
+    border-color: transparent;
+}
+
+.glass-checkbox:checked + .glass-checkbox-label::before {
+    transform: translate(24px, -50%);
+    transition: transform 300ms;
 }
 
 .glassomorphic {
@@ -129,7 +166,7 @@ h1 {
     margin-bottom: 1rem;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
     h1 {
         font-size: 12vw;
     }
