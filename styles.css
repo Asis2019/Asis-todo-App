@@ -16,7 +16,7 @@ html, body {
     font-size: 16px;
     color: #000000;
 
-    background: linear-gradient(320deg, var(--accent-color), #DED3AB, #ABDED3);
+    background: linear-gradient(320deg, var(--accent-color), #DED3AB, #ABDED3) fixed;
 }
 
 h1 {
@@ -118,8 +118,33 @@ h1 {
     }
 }
 
+.button-container {
+    display: flex;
+    margin-left: 1rem;
+}
+
 .text-muted {
     opacity: .5;
     padding: 1rem;
     margin-bottom: 1rem;
+}
+
+@media(max-width: 768px) {
+    h1 {
+        font-size: 12vw;
+    }
+
+    .container {
+        margin-inline: 1rem;
+    }
+
+    .content {
+        width: unset;
+        margin-inline: unset;
+    }
+
+    .input {
+        width: unset;
+        margin-inline: unset;
+    }
 }

@@ -46,7 +46,7 @@ function addTodoItemToUI(todoItem) {
     listItem.classList.add('todoItem', 'glassomorphic');
 
     const div = document.createElement('div');
-    div.style.display = 'flex';
+    div.classList.add('button-container');
 
     const label = document.createElement('label');
     label.classList.add('checkbox');
